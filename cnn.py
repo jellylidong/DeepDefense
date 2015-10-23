@@ -9,6 +9,8 @@ from keras.optimizers import SGD, Adadelta, Adagrad
 from keras.utils import np_utils, generic_utils
 from six.moves import range
 
+import numpy as np
+
 '''
     Train a (fairly simple) deep CNN on the CIFAR10 small images dataset.
 
@@ -34,7 +36,7 @@ img_rows, img_cols = 32, 32
 img_channels = 3
 
 # the data, shuffled and split between tran and test sets
-(X_train, y_train), (X_test, y_test) = cifar10.load_data()
+#(X_train, y_train), (X_test, y_test) = cifar10.load_data()
 print('X_train shape:', X_train.shape)
 print(X_train.shape[0], 'train samples')
 print(X_test.shape[0], 'test samples')
@@ -44,6 +46,11 @@ Y_train = np_utils.to_categorical(y_train, nb_classes)
 Y_test = np_utils.to_categorical(y_test, nb_classes)
 
 model = Sequential()
+
+# (32, 3, 3
+# 32: nb_filter, number of convolution kernels to use
+# 3: nb_row, number of rows in convolution kernel
+# 3: nb_col, numiber of columes in convolution kernel
 
 model.add(Convolution2D(32, 3, 3, border_mode='full',
                         input_shape=(img_channels, img_rows, img_cols)))
