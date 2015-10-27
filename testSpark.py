@@ -18,9 +18,9 @@ try:
 
 except ImportError as e:
     print ("Error importing Spark Modules", e)
-sc = SparkContext(appName="PythonWordCount")
+sc = SparkContext(appName="PythonWordCount");
 
-a =[1,2,3,4,5]
-b = sc.parallelize(a)
-c = b.map(lambda k :2*k)
+a =[1,2,3,4,5];
+b = sc.parallelize(a);
+c = b.map(lambda k :2*k);
 print c.collect()
