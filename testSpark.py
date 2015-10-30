@@ -3,12 +3,19 @@ __author__ = 'vcoder'
 import os
 import sys
 
+
+os.environ['SPARK_HOME'] = "/home/worker/software/spark-1.5.0"
+sys.path.append("/home/worker/software/spark-1.5.0/python")
+
+
+# os.environ['SPARK_HOME'] = "/home/vcoder/EDA/spark-1.5.0"
+# # os.environ['SPARK_HOME'] = "/home/jie/d2/spark-0.9.1"
+
 # Set the path for spark installation
 # this is the path where you have built spark using sbt/sbt assembly
-os.environ['SPARK_HOME'] = "/home/vcoder/EDA/spark-1.5.0"
-# os.environ['SPARK_HOME'] = "/home/jie/d2/spark-0.9.1"
-# Append to PYTHONPATH so that pyspark could be found
-sys.path.append("/home/vcoder/EDA/spark-1.5.0/python")
+
+# # Append to PYTHONPATH so that pyspark could be found
+# sys.path.append("/home/vcoder/EDA/spark-1.5.0/python")
 # sys.path.append("/home/jie/d2/spark-0.9.1/python")
 
 # Now we are ready to import Spark Modules
